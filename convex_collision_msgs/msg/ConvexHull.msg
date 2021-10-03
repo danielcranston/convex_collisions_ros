@@ -1,4 +1,4 @@
-geometry_msgs/PoseStamped pose
-geometry_msgs/Point[] vertices
-geometry_msgs/Vector3[] normals
-geometry_msgs/Vector3[] edges    # More specifically, edge directions
+geometry_msgs/PoseStamped pose   # The pose of the body
+geometry_msgs/Point[] vertices   # Verticies
+geometry_msgs/Vector3[] normals  # Face normals
+geometry_msgs/Vector3[] edges    # Edge directions (as opposed to indices into vertices)

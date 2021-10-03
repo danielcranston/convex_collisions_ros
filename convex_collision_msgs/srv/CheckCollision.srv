@@ -1,5 +1,7 @@
-convex_collision_msgs/ConvexHull body_a
-convex_collision_msgs/ConvexHull body_b
+# Determines if two convex bodies are in collision.
+
+convex_collision_msgs/ConvexHull body_a  # The first body to be tested
+convex_collision_msgs/ConvexHull body_b  # The second body to be tested
 ---
-bool success
-bool is_colliding
+bool success                             # If the service was run successfully (if TF lookups succeeded)
+bool is_colliding                        # True if the two bodies are in collision, else False
