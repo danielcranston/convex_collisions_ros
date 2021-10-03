@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package format="2">
+    <name>convex_collision_ros</name>
+    <version>0.0.0</version>
+    <description>Example implementation of SAT for collision testing convex meshes</description>
+    <maintainer email="cranston.daniel@gmail.com">Daniel</maintainer>
+    <license>MIT</license>
+
+    <buildtool_depend>catkin</buildtool_depend>
+
+    <depend>geometry_msgs</depend>
+    <depend>visualization_msgs</depend>
+
+    <exec_depend>python-trimesh-pip</exec_depend>
+    <exec_depend>rviz_interactive_tf</exec_depend>
+    <exec_depend>rosparam</exec_depend>
+    <exec_depend>rospy</exec_depend>
+</package>

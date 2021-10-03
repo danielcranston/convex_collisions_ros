@@ -1,0 +1,5 @@
+convex_collision_msgs/ConvexHull body_a
+convex_collision_msgs/ConvexHull body_b
+---
+bool success
+bool is_colliding

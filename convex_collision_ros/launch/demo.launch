@@ -1,0 +1,25 @@
+<launch>
+    <arg name="demo_type" default="box" /> <!-- "box", "mesh" or "ray" -->
+    <arg name="verbose" default="true" />
+
+    <node type="rviz" name="rviz" pkg="rviz" args="-d $(find convex_collision_ros)/config/config.rviz" />
+    <node pkg="tf2_ros" type="static_transform_publisher" name="static_tf_pub" args="1.5 0 0 0 0 0 1 world offset" />
+
+    <node name="itf2" pkg="rviz_interactive_tf" type="interactive_tf">
+        <param name="parent_frame" value="offset" />
+        <param name="frame" value="body2" />
+        <param name="scale" value="1.0" unless="$(eval demo_type == 'box')" />
+        <param name="scale" value="0.4" if="$(eval demo_type == 'mesh')" />
+    </node>
+    <node pkg="tf" type="static_transform_publisher" name="world_to_body_a" args="0 0 0.25 0 0 0 1 world body1 100" />
+
+
+    <node name="collision_manager" pkg="convex_collision_ros" type="collision_manager.py" output="screen">
+        <param name="publish_separating_axes" value="$(eval demo_type != 'mesh')" />
+        <param name="verbose" value="$(arg verbose)" />
+    </node>
+
+    <node name="demo_node" pkg="convex_collision_ros" type="demo_node.py">
+        <param name="demo_type" value="$(arg demo_type)" />
+    </node>
+</launch>
