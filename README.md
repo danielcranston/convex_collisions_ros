@@ -11,7 +11,7 @@ There main code has no external dependencies beyond ROS.
 
 However, to run the demo, you'll need the following:
 * `trimesh` (installed via `pip`).
-* [rviz_interactive_tf](https://github.com/lucasw/rviz_interactive_tf) (cloned into the workspace and built alongside the packages in this repo)
+* [rviz_interactive_tf](https://github.com/lucasw/rviz_interactive_tf) (cloned into the workspace and built alongside the packages in this repo).
 
 ## Examples
 ```
@@ -40,6 +40,8 @@ The code is by no means optimized, instead focus is on brevity and readability. 
 * Prune duplicate and degenerate candidate separating axes.
 * Separate ROS-specific code and non-ROS implementation into two different packages.
 * Don't exhaustively calculate all separating axes candidates, break early if a separating axis is found.
+  - Or rather, add an option in the service request so the caller can choose.
+* Instead of returning a bool in the service response, return the distance between the bodies (negative if colliding).
 * Skip the matrix multiplications transforming body B into body A's frame _if the frames are the same_.
-* Implement in a compiled language (C++)
+* Implement in a compiled language (C++).
 * Parallelize. Each separating axis candidate is independent from all others, both in terms of construction and evaluation.
