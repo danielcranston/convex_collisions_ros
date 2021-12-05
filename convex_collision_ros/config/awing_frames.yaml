@@ -1,0 +1,36 @@
+# This file defines a couple of frames for the awing model using Denavit-Hartenberg parameters.
+
+# https://en.wikipedia.org/wiki/Denavit%E2%80%93Hartenberg_parameters#Four_parameters
+# https://www.youtube.com/watch?v=rA9tm0gTln8
+
+# Not really super useful for this application since all frames are static, this is just meant to
+# showcase how Denavit-Hartenberg parameters work.
+
+turret1:
+  parent_frame: base
+  dh_parameters:
+    theta: 0
+    alpha: 0
+    a: 0.14
+    d: 0.06
+turret2:
+  parent_frame: base
+  dh_parameters:
+    theta: 0
+    alpha: 0
+    a: -0.14
+    d: 0.06
+exhaust1:
+  parent_frame: base
+  dh_parameters:
+    theta: 0
+    alpha: 3.141592653589793
+    a: 0.075
+    d: -0.24
+exhaust2:
+  parent_frame: base
+  dh_parameters:
+    theta: 0
+    alpha: 3.141592653589793
+    a: -0.075
+    d: -0.24

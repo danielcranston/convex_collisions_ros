@@ -33,6 +33,22 @@ This one might be a bit of a misnormer (is a ray allowed to be considered a "bod
 
 <img src="image3.png" alt="drawing" width="600"/>
 
+## Branch-specific Examples (unrelated to collisions)
+
+### Defining frames using Denavit-Hartenberg parameters
+
+A simple example of defining frames via Denavit-Hartenberg parameters. See
+
+* https://en.wikipedia.org/wiki/Denavit%E2%80%93Hartenberg_parameters#Four_parameters
+* https://www.youtube.com/watch?v=rA9tm0gTln8
+
+```
+roslaunch convex_collision_ros denavit_hartenberg_demo.launch 
+```
+
+<img src="image_dh_parameters.png" alt="drawing" width="600"/>
+
+
 ## Disclaimer
 
 The code is by no means optimized, instead focus is on brevity and readability. Here are a couple of potential improvements:
